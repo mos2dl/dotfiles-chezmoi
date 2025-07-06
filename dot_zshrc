@@ -119,7 +119,7 @@ alias gp="git pull"
 alias lg=lazygit
 
 if command -v bat > /dev/null ; then
-  alias cat="bat"
+  alias ct="bat"
 fi
 
 if command -v lsd > /dev/null ; then
