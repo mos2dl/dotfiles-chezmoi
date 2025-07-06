@@ -5,8 +5,9 @@ vim.g.lazyvim_check_order = false
 
 vim.opt.ignorecase = true
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.number = true
+-- vim.opt.relativenumber = true
+
 vim.opt.scrolloff = 8
 
 vim.opt.undofile = true
