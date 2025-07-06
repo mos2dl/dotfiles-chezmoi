@@ -23,6 +23,11 @@ $character\
 [fill]
 symbol = " "
 
+[hostname]
+ssh_only = false
+detect_env_vars = ['TMUX']
+style = 'bold blue dimmed'
+
 [directory]
 style = "green"
 read_only = "󰌾"
