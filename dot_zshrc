@@ -1,3 +1,15 @@
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download Zinit if it doesn't exist
+if [ ! -d "$ZINIT_HOME" ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+source "${ZINIT_HOME}/zinit.zsh"
+
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::vi-mode
+
 # History ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -5,30 +17,25 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 
+setopt appendhistory
+set
 setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_DUPS
+setpot MENU_COMPLETE
 setopt SHARE_HISTORY
 
 
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 PURE_GIT_PULL=0
-
-# if [[ "$OSTYPE" == darwin* ]]; then
-#   fpath+=("$(brew --prefix)/share/zsh/site-functions")
-# else
-#   fpath+=($HOME/.zsh/pure)
-# fi
 
 autoload -U promptinit; promptinit
 
-# prompt pure
 
 # enable zsh vi-mode
 bindkey -v
 VI_MODE_SET_CURSOR=true
-export KEYTIMEOUT=1 # make switching between modes faster
+export KEYTIMEOUT=5 # make switching between modes faster
 
 
 # ~~~~~~~~~~~~~~~ Environment Variables ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,7 +62,7 @@ fi
 
 # ~~~~~~~~~~~~~~~ Completion ~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
 if command -v fzf > /dev/null ; then
@@ -70,11 +77,27 @@ if command -v kubectl > /dev/null ; then
   source <(kubectl completion zsh)
 fi
 
-
 if command -v mise > /dev/null ; then
   source <(mise completion zsh)
 fi
 
+# ~~~~~~~~~~~~~~~ Zsh Plugins ~~~~~~~~~~~~~~~~~~~~~~~~
+
+if [ ! -d "$HOME/.zfunc" ] ; then
+  mkdir "$HOME/.zfunc"
+fi
+
+fpath+=~/.zfunc
+
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -95,6 +118,13 @@ if command -v lsd > /dev/null ; then
   alias lt='ls --tree'
 fi
 
+if command -v lazygit > /dev/null ; then
+  alias lg='lazygit'
+fi
+
 alias c=clear
+
+
+# ~~~~~~~~~~~~~~~ Activate Starship ~~~~~~~~~~~~~~~~~~~~~~~~
 
 eval "$(starship init zsh)"
