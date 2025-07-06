@@ -115,7 +115,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 alias v=nvim
 alias gp="git pull"
 alias lg=lazygit
@@ -189,6 +188,12 @@ if command -v git > /dev/null ; then
   alias gunwip='git log -n 1 | grep -q -c "WIP" && git reset HEAD~1'
   alias gignore='git update-index --assume-unchanged'
   alias gunignore='git update-index --no-assume-unchanged'
+fi
+
+if command -v kubectl > /dev/null ; then
+  alias k=kubectl
+  alias kgp='kubectl get pods'
+  alias kcgc='kubectl config get-contexts'
 fi
 
 # ~~~~~~~~~~~~~~~ Activate Starship ~~~~~~~~~~~~~~~~~~~~~~~~
