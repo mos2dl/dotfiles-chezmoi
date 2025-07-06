@@ -162,3 +162,5 @@ set -o vi
 
 alias la='ls -ahl --color'
 alias ll='ls -hl --color'
+
+eval "$(mise activate bash)"
