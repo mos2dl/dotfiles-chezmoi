@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bash
 
 set -euo pipefail
 
@@ -7,7 +7,7 @@ if command -v zsh >/dev/null; then
 fi
 
 if ! command -v chezmoi >/dev/null; then
-  sh -c "$(curl -fsSL get.chezmoi.io)" -- init --apply https://github.com/dotfiles-chezmoi.git
+  sh -c "$(curl -fsSL get.chezmoi.io)" -- init --apply git@github.com:mos2dl/dotfiles-chezmoi.git
 fi
 
 if [ ! -d "$HOME/.zsh" ]; then
