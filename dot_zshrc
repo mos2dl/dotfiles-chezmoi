@@ -36,6 +36,9 @@ fi
 
 export LANG="en_US.UTF-8"
 
+# Colors for lsd
+export LS_COLORS="di=2;34:fi=2;37:ln=2;36:pi=2;33:so=2;35:bd=2;33:cd=2;33:or=2;31:ex=2;32"
+
 
 # ~~~~~~~~~~~~~~~ Mise ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -84,3 +87,4 @@ if command -v lsd > /dev/null ; then
 fi
 
 alias c=clear
+
