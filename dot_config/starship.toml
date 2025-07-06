@@ -6,7 +6,6 @@ $git_state\
 $git_status\
 $git_metrics\
 $fill\
-$kubernetes\
 $python\
 $nodejs\
 $haskell\
@@ -15,6 +14,8 @@ $ocaml\
 $lua\
 $cpp\
 $rust\
+$container\
+$kubernetes\
 $line_break\
 $character\
 """
@@ -23,15 +24,20 @@ $character\
 symbol = " "
 
 [directory]
-style = "yellow"
+style = "green"
 read_only = "󰌾"
 # truncation_length = 4
 truncate_to_repo = false
 
+[container]
+symbol = "󰡨 "
+style = "bold blue dimmed"
+format = '[$symbol $name]($style) '
+
 [character]
 success_symbol = '[ 󰘧 ](bold green)'
 error_symbol = '[󰘧 ](red)'
-vicmd_symbol = '[❮󰘧 ](yellow)'
+vimcmd_symbol = '[❮󰘧 ](yellow)'
 
 [git_branch]
 symbol = " "

@@ -20,10 +20,10 @@ PURE_GIT_PULL=0
 # else
 #   fpath+=($HOME/.zsh/pure)
 # fi
+
 autoload -U promptinit; promptinit
 
 # prompt pure
-eval "$(starship init zsh)"
 
 # enable zsh vi-mode
 bindkey -v
@@ -97,3 +97,4 @@ fi
 
 alias c=clear
 
+eval "$(starship init zsh)"
