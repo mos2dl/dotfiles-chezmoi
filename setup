@@ -3,20 +3,29 @@
 set -euo pipefail
 
 if command -v zsh >/dev/null; then
-  sudo chsh -s $(command -v zsh) $USER
+	sudo chsh -s $(command -v zsh) $USER
 fi
 
 if ! command -v chezmoi >/dev/null; then
-  sh -c "$(curl -fsSL get.chezmoi.io)" -- init --apply git@github.com:MoS2DL/dotfiles-demo.git
+	sh -c "$(curl -fsSL get.chezmoi.io)" -- init --apply git@github.com:MoS2DL/dotfiles-demo.git
 fi
 
 if [ ! -d "$HOME/.zsh" ]; then
-  mkdir -p "$HOME/.zsh"
+	mkdir -p "$HOME/.zsh"
 fi
 
 # Check if pur is already installed
 if [ ! -d "$HOME/.zsh/pure" ]; then
-  git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+	git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+fi
+
+# On Debian/Ubuntu, install tmux
+
+source /etc/os-release
+
+if [ -f /etc/os-release ] && [[ "$ID" = "ubuntu" ]]; then
+	echo "---####---- Os Ubuntu detected ------"
+	sudo apt update && sudo apt install tmux -y
 fi
 
 exit 0
