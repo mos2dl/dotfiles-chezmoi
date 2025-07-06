@@ -1,6 +1,6 @@
 return {
 
-	-- { "catppuccin/nvim" },
+	{ "catppuccin/nvim" },
 	{
 		"rebelot/kanagawa.nvim",
 		branch = "master",
@@ -84,10 +84,10 @@ return {
 		-- 	vim.cmd([[colorscheme kanagawa]])
 		-- end,
 	},
-	-- {
-	-- 	"LazyVim/LazyVim",
-	-- 	opts = {
-	-- 		colorscheme = "kanagawa",
-	-- 	},
-	-- },
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "kanagawa",
+		},
+	},
 }
