@@ -2,17 +2,6 @@
 
 set -euo pipefail
 
-# source /etc/os-release
-# if [ -f /etc/os-release ] && [[ "$ID" = "ubuntu" ]]; then
-#   # sudo apt update && sudo apt install tmux -y
-#   sudo apt update && sudo apt install -y \
-#     automake \
-#     pkg-config \
-#     libevent-dev \
-#     libncurses5-dev \
-#     bison
-# fi
-
 if command -v zsh >/dev/null; then
   sudo chsh -s $(command -v zsh) $USER
 fi
