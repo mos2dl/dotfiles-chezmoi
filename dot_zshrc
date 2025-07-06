@@ -89,6 +89,10 @@ if command -v mise > /dev/null ; then
   source <(mise completion zsh)
 fi
 
+if command -v uv > /dev/null ; then
+  eval "$(uv generate-shell-completion zsh)"
+fi
+
 # ~~~~~~~~~~~~~~~ Zsh Plugins ~~~~~~~~~~~~~~~~~~~~~~~~
 
 if [ ! -d "$HOME/.zfunc" ] ; then
@@ -131,7 +135,11 @@ if command -v lazygit > /dev/null ; then
 fi
 
 alias c=clear
+alias e=exit
 
+alias vim=nvim
+alias v=nvim
+alias vi=nvim
 
 # ~~~~~~~~~~~~~~~ Activate Starship ~~~~~~~~~~~~~~~~~~~~~~~~
 
