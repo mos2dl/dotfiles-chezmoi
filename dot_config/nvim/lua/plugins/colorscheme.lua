@@ -18,7 +18,7 @@ return {
 		branch = "master",
 		config = function()
 			require("kanagawa").setup({
-				compile = true, -- enable compiling the colorscheme
+				compile = false, -- enable compiling the colorscheme
 				undercurl = true, -- enable undercurls
 				commentStyle = { italic = true },
 				functionStyle = {},
@@ -86,9 +86,9 @@ return {
 			-- vim.cmd("colorscheme kanagawa")
 		end,
 
-		build = function()
-			vim.cmd("KanagawaCompile")
-		end,
+		-- build = function()
+		-- 	vim.cmd("KanagawaCompile")
+		-- end,
 		-- config = function()
 		-- 	-- load the colorscheme here
 		-- 	vim.cmd([[colorscheme kanagawa]])
