@@ -142,7 +142,7 @@ alias v=nvim
 alias vi=nvim
 
 
-if command -v git > /dev/nul ; then
+if command -v git > /dev/null ; then
   alias git='git status'
   alias ga='git add'
   alias gaa='git add --all'
