@@ -18,10 +18,9 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 setopt appendhistory
-set
 setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_DUPS
-setpot MENU_COMPLETE
+setopt MENU_COMPLETE
 setopt SHARE_HISTORY
 
 
