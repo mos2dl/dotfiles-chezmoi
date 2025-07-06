@@ -23,6 +23,15 @@ setopt HIST_IGNORE_DUPS
 setopt MENU_COMPLETE
 setopt SHARE_HISTORY
 
+# ~~~~~~~~~~~~~~~ Bind keys ~~~~~~~~~~~~~~~~~~~~~~~~
+
+bindkey "^y" autosuggest-accept
+
+bindkey '^n' history-search-backward
+bindkey '^p' history-search-forward
+
+bindkey "^[[A" up-line-or-history
+bindkey "^[[B" down-line-or-history
 
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
 
