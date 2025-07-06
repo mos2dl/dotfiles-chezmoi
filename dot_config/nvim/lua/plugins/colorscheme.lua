@@ -71,7 +71,7 @@ return {
 					dark = "wave", -- try "dragon" !
 				},
 			})
-			vim.cmd("colorscheme kanagawa")
+			-- vim.cmd("colorscheme kanagawa")
 		end,
 
 		build = function()
@@ -87,7 +87,7 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "kanagawa",
+			colorscheme = "catppuccin",
 		},
 	},
 }
