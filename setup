@@ -7,7 +7,7 @@ if command -v zsh >/dev/null; then
 fi
 
 if ! command -v chezmoi >/dev/null; then
-  sh -c "$(curl -fsSL get.chezmoi.io)" -- init --apply git@github.com:MoS2DL/dotfiles-demo.git
+  sh -c "$(curl -fsSL get.chezmoi.io)" -- init --apply https://github.com/dotfiles-chezmoi.git
 fi
 
 if [ ! -d "$HOME/.zsh" ]; then
@@ -18,7 +18,5 @@ fi
 if [ ! -d "$HOME/.zsh/pure" ]; then
   git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 fi
-
-# On Debian/Ubuntu, install tmux
 
 exit 0
