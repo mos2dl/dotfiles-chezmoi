@@ -27,6 +27,7 @@ prompt pure
 
 # enable zsh vi-mode
 bindkey -v
+VI_MODE_SET_CURSOR=true
 export KEYTIMEOUT=1 # make switching between modes faster
 
 
@@ -63,6 +64,10 @@ fi
 
 if command -v flux > /dev/null ; then
   source <(flux completion zsh)
+fi
+
+if command -v kubectl > /dev/null ; then
+  source <(kubectl completion zsh)
 fi
 
 
