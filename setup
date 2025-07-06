@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
-echo "Hello World" > /tmp/hello
+set -euo pipefail
 
-echo "set -o vi" >> ~/.bashrc
+if ! command -v chezmoi >/dev/null; then
+    sh -c "$(curl -fsSL get.chezmoi.io)" -- init --apply git@github-local:MoS2DL/dotfiles-demo.git
+fi
+
+exit 0
+
