@@ -54,6 +54,8 @@ if command -v nvim > /dev/null ; then
   export VISUAL="nvim"
 fi
 
+export UV_LINK_MODE="copy"
+
 export LANG="en_US.UTF-8"
 
 # Colors for lsd
