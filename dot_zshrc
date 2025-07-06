@@ -141,6 +141,50 @@ alias vim=nvim
 alias v=nvim
 alias vi=nvim
 
+
+if command -v git > /dev/nul ; then
+  alias git='git status'
+  alias ga='git add'
+  alias gaa='git add --all'
+  alias gc='git commit'
+  alias gcm='git commit -m'
+  alias gca='git commit --amend'
+  alias gp='git push'
+  alias gpu='git push -u origin'
+  alias gl='git pull'
+  alias gf='git fetch'
+  alias gco='git checkout'
+  alias gcb='git checkout -b'
+  alias gb='git branch'
+  alias gba='git branch -a'
+  alias gbd='git branch -d'
+  alias gm='git merge'
+  alias gr='git rebase'
+  alias gri='git rebase -i'
+  alias gst='git stash'
+  alias gstp='git stash pop'
+  alias gd='git diff'
+  alias gdc='git diff --cached'
+
+  # Powerful log aliases
+  alias glog='git log --oneline --decorate --graph'
+  alias gloga='git log --oneline --decorate --graph --all'
+  alias glogp='git log --pretty=format:"%C(yellow)%h%C(reset) - %C(green)(%cr)%C(reset) %s %C(blue)<%an>%C(reset)" --graph'
+  alias glogpa='git log --pretty=format:"%C(yellow)%h%C(reset) - %C(green)(%cr)%C(reset) %s %C(blue)<%an>%C(reset)" --graph --all'
+  alias glogd='git log --pretty=format:"%C(yellow)%h%C(reset) - %C(cyan)%ad%C(reset) %s %C(blue)<%an>%C(reset)" --date=short --graph'
+  alias glogs='git log --stat'
+  alias glogfull='git log --pretty=fuller --graph'
+
+  # Additional useful aliases
+  alias gundo='git reset HEAD~1'
+  alias gunstage='git reset HEAD'
+  alias gclean='git clean -fd'
+  alias gwip='git add -A && git commit -m "WIP"'
+  alias gunwip='git log -n 1 | grep -q -c "WIP" && git reset HEAD~1'
+  alias gignore='git update-index --assume-unchanged'
+  alias gunignore='git update-index --no-assume-unchanged'
+fi
+
 # ~~~~~~~~~~~~~~~ Activate Starship ~~~~~~~~~~~~~~~~~~~~~~~~
 
 eval "$(starship init zsh)"
