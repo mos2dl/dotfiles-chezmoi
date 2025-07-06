@@ -1,10 +1,13 @@
 [tools]
-bat = "latest"
-chezmoi = "latest"
-fzf = "latest"
-lsd = "latest"
-ripgrep = "latest"
+
 neovim = "latest"
+ripgrep = "latest"
+lsd = "latest"
+bat = "latest"
+fzf = "latest"
+fd = "latest"
 node = "latest"
+chezmoi = "latest"
 starship = "latest"
 lazygit = "latest"
+usage = "latest"
