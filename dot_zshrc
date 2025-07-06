@@ -130,6 +130,10 @@ if command -v lsd > /dev/null ; then
   alias lt='ls --tree'
 fi
 
+if [[ $DEVPOD == "true" ]] ; then
+  alias cdw="cd /workspaces/$DEVPOD_WORKSPACE_ID"
+fi
+
 if command -v lazygit > /dev/null ; then
   alias lg='lazygit'
 fi
